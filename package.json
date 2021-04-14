@@ -18,5 +18,18 @@
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "projet_react",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fosfen/projet_react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fosfen/projet_react/issues"
+  },
+  "homepage": "https://github.com/Fosfen/projet_react#readme",
+  "description": ""
 }
