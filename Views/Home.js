@@ -3,28 +3,27 @@ import { View, Text, StyleSheet } from "react-native";
 
 const  Home = () => {
   return (
-    <View style={styles.main_container}>
-        <Text>Main container</Text>
-
+    <View>
         <View style={styles.title_container}>
-            <Text>Title container</Text>
+            <Text style={styles.title}>La carte</Text>
         </View>
 
         <View style={styles.dishes_container}>
          {/* DISHES COME HERE */}
         </View>
-
       </View>
   );
 };
 
 const styles = StyleSheet.create({
-    main_container: {
-        backgroundColor:"red"
-    },
     title_container:{
-        padding:3,
-        backgroundColor:"green"
+        padding:10,
+        marginLeft:"5%",
+    },
+    title:{
+        fontWeight: "bold",
+        fontSize: 20,
+        textDecorationLine:"underline"
     },
     dishes_container:{
         flexDirection: "row",
