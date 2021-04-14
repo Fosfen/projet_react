@@ -1,9 +1,13 @@
+// Other immports
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+// React native components
+import React from 'react';
+import { StyleSheet } from 'react-native';
+
+// Our components
 import Home from './Views/Home';
 
 const Stack = createStackNavigator();

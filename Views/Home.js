@@ -5,7 +5,7 @@ const  Home = () => {
   return (
     <View style={styles.main_container}>
         <Text>Main container</Text>
-        
+
         <View style={styles.title_container}>
             <Text>Title container</Text>
         </View>
@@ -13,7 +13,7 @@ const  Home = () => {
         <View style={styles.dishes_container}>
          {/* DISHES COME HERE */}
         </View>
-      
+
       </View>
   );
 };
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
         backgroundColor:"grey"
     },
   });
-  
+
 
 export default Home;
