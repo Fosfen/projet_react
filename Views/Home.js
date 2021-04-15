@@ -4,8 +4,8 @@ import Dish from "../components/dish";
 
 const mocked_data = {
   dishes: [
-    { "id": "1", "name": "Saucisse" },
-    { "id": "2", "name": "Kebab" }
+    { "id": "1", "name": "Saucisse", "description": "Une onctueuse saucisse, dotée d'une délicate touche de miel." },
+    { "id": "2", "name": "Kebab", "description": "C'est la street, on aime tous graille un bon Kebab" }
   ]}
 
 const  Home = () => {
@@ -26,7 +26,7 @@ const  Home = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Dish name={item.name}/>
+            <Dish name={item.name} description={item.description}/>
           )}
         />
         </View>
