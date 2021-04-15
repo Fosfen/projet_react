@@ -3,9 +3,8 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import Dish from "../components/dish";
 
 const  Home = () => {
-  
   const [data, setData] = useState([]);
-  
+
   useEffect(() => {
     fetch('http://localhost:3000/dishes')
       .then((response) => response.json())
@@ -20,7 +19,6 @@ const  Home = () => {
         </View>
 
         <View>
-
          <FlatList
           data={data}
           keyExtractor={({ id }, index) => id}
@@ -28,7 +26,6 @@ const  Home = () => {
             <Dish name={item.name}/>
           )}
         />
-
         </View>
       </View>
   );
