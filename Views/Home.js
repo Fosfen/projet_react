@@ -4,9 +4,9 @@ import Dish from "../components/dish";
 
 const  Home = () => {
   const [data, setData] = useState([]);
-
+  
   useEffect(() => {
-    fetch('http://localhost:3000/dishes')
+    fetch('http://192.168.152.86:3000/dishes')
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => console.error(error));
@@ -23,7 +23,7 @@ const  Home = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Dish name={item.name}/>
+            <Dish name={item.name}  image={item.image}/>
           )}
         />
         </View>
