@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
+import Dish from "../components/dish";
 
 const  Home = () => {
   
@@ -18,16 +19,15 @@ const  Home = () => {
             <Text style={styles.title}>La carte</Text>
         </View>
 
-        <View style={styles.dishes_container}>
-         {/* DISHES COME HERE */}
+        <View>
+
          <FlatList
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Text>{item.name}</Text>
+            <Dish name={item.name}/>
           )}
         />
-
 
         </View>
       </View>
@@ -43,10 +43,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 20,
         textDecorationLine:"underline"
-    },
-    dishes_container:{
-        flexDirection: "row",
-        backgroundColor:"grey"
     },
   });
 
