@@ -4,8 +4,8 @@ import Dish from "../components/dish";
 
 const mocked_data = {
   dishes: [
-    { "id": 1, "name": "Saucisse" },
-    { "id": 2, "name": "Kebab" }
+    { "id": "1", "name": "Saucisse" },
+    { "id": "2", "name": "Kebab" }
   ]}
 
 const  Home = () => {
