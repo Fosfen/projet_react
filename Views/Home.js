@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import Dish from "../components/dish";
 
+const mocked_data = {
+  dishes: [
+    { "id": 1, "name": "Saucisse" },
+    { "id": 2, "name": "Kebab" }
+  ]}
+
 const  Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/dishes')
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error(error));
+    setData(mocked_data.dishes);
   }, []);
 
   return (
