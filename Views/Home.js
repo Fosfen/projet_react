@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import Dish from "../components/dish";
 
+const mocked_data = {
+  dishes: [
+    { "id": 1, "name": "Saucisse", "price": 0.50, "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFDu1AAhoP31DueEGOLe-4bkb3HRDfhSH7Z-zCKN1vwQc4DdZd_wIOrCIOblitaowAesPuQGlv&usqp=CAc"},
+    { "id": 2, "name": "Kebab", "price": 3.50, "image":"https://www.toute-la-franchise.com/images/zoom/ouvrir-un-kebab-en-franchise.jpg"}
+  ]}
+
 const  Home = () => {
   const [data, setData] = useState([]);
   
   useEffect(() => {
-    fetch('http://192.168.152.86:3000/dishes')
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error(error));
+    setData(mocked_data.dishes);
   }, []);
 
   return (
