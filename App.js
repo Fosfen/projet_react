@@ -9,6 +9,7 @@ import { StyleSheet } from 'react-native';
 
 // Our components
 import Home from './Views/Home';
+import Detail from './Views/Detail';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,11 @@ export default function App() {
           name="Home"
           component={Home}
           options={{ title: 'Delivecrous'}}
+        />
+
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -8,9 +8,9 @@ const mocked_data = {
     { "id": "2", "name": "Kebab", "description": "C'est la street, on aime tous graille un bon Kebab", "price": 3.50, "image":"https://www.toute-la-franchise.com/images/zoom/ouvrir-un-kebab-en-franchise.jpg"}
   ]}
 
-const  Home = () => {
+const Home = ({ navigation }) => {
   const [data, setData] = useState([]);
-  
+
   useEffect(() => {
     setData(mocked_data.dishes);
   }, []);
@@ -26,7 +26,7 @@ const  Home = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Dish name={item.name}  image={item.image} price={item.price} description={item.description}/>
+            <Dish name={item.name} image={item.image} price={item.price} description={item.description} navigation={navigation}/>
           )}
         />
         </View>
