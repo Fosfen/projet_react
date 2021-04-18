@@ -15,7 +15,7 @@ const Dish = (props) => {
         
         <View style={styles.price_and_button_container}>
           <Text style={styles.price}>{props.price}€</Text>    
-          <Button style={styles.button} title="Add to cart"></Button>
+          <Button style={styles.button} title="Add to cart" ></Button>
         </View>
       </View>
     </View>

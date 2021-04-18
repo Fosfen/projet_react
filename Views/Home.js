@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Button} from "react-native";
 import Dish from "../components/dish";
 
 const mocked_data = {
@@ -8,7 +8,7 @@ const mocked_data = {
     { "id": "2", "name": "Kebab", "description": "C'est la street, on aime tous graille un bon Kebab", "price": 3.50, "image":"https://www.toute-la-franchise.com/images/zoom/ouvrir-un-kebab-en-franchise.jpg"}
   ]}
 
-const  Home = () => {
+const  Home = ({navigation}) => {
   const [data, setData] = useState([]);
   
   useEffect(() => {
@@ -17,6 +17,11 @@ const  Home = () => {
 
   return (
     <View>
+      <Button color="#00aa00" title="Go to my cart" 
+        onPress={() =>
+          navigation.navigate('Cart')
+        }/>
+        
         <View style={styles.title_container}>
             <Text style={styles.title}>La carte</Text>
         </View>

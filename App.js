@@ -9,23 +9,26 @@ import { StyleSheet, Button, View } from 'react-native';
 
 // Our components
 import Home from './Views/Home';
+import Cart from './Views/Cart';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-          screenOptions ={{ title: 'Delivecrous',
-          headerRight: () => (
-          <View style={styles.CartButtonContainer}>
-            <Button color="#00aa00" title="Go to my cart"/>
-          </View>
-        )}}>
+      
+      <Stack.Navigator initialRouteName="Home" screenOptions ={{ title: 'Delivecrous'}}>
+        
         <Stack.Screen
           name="Home"
           component={Home}
         />
+
+        <Stack.Screen
+          name="Cart"
+          component={Cart}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -37,9 +40,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-
-  CartButtonContainer:{
-    padding:5,
   }
 });
