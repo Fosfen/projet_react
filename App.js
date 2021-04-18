@@ -10,25 +10,28 @@ import { StyleSheet, Button, View } from 'react-native';
 // Our components
 import Home from './Views/Home';
 import Cart from './Views/Cart';
+import Detail from './Views/Detail';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      
+
       <Stack.Navigator initialRouteName="Home" screenOptions ={{ title: 'Delivecrous'}}>
-        
+
         <Stack.Screen
           name="Home"
           component={Home}
         />
-
         <Stack.Screen
           name="Cart"
           component={Cart}
         />
-
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
