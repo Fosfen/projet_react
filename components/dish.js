@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     
     price:{
       flex:1,
-      justifyContent:'flex-end',
       fontSize : 14,
       fontWeight : 'bold',
       marginLeft : 10
