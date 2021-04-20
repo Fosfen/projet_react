@@ -1,12 +1,21 @@
 import React from "react";
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet, FlatList, ScrollView} from "react-native";
 
-const Cart = ({navigation}) => {
+const Cart = ({navigation, route}) => {
 
   return (
     <View>
         <View style={styles.title_container}>
-            <Text style={styles.title}>Mon panier :</Text>
+            <Text style={styles.title}>Ma commande : {route.params.cart.map(a=>a.price).reduce((a,b)=>a+b,0)}€</Text>
+            <ScrollView>
+              <FlatList
+                data={route.params.cart}
+                keyExtractor={({ id }, index) => id}
+                renderItem={({ item }) => (
+                  <Text> # {item.name} - {item.price}€</Text>
+              )}
+              />
+            </ScrollView>
         </View>
     </View>
   );

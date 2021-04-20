@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // React native components
 import React from 'react';
-import { StyleSheet, Button, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 // Our components
 import Home from './Views/Home';
@@ -15,6 +15,7 @@ import Detail from './Views/Detail';
 const Stack = createStackNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer>
 
