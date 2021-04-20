@@ -4,9 +4,10 @@ import { View, Text, StyleSheet, FlatList, ScrollView} from "react-native";
 const Cart = ({navigation, route}) => {
 
   return (
-    <View>
+    <View style={styles.main_container}>
         <View style={styles.title_container}>
             <Text style={styles.title}>Ma commande : {route.params.cart.map(a=>a.price).reduce((a,b)=>a+b,0)}€</Text>
+        </View>
             <ScrollView>
               <FlatList
                 data={route.params.cart}
@@ -16,12 +17,15 @@ const Cart = ({navigation, route}) => {
               )}
               />
             </ScrollView>
-        </View>
+        
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  main_container:{
+    height:"100%"
+  },
     title_container:{
         padding:10,
         marginLeft:"5%",
