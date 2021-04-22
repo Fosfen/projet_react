@@ -11,6 +11,7 @@ import { StyleSheet } from 'react-native';
 import Home from './Views/Home';
 import Cart from './Views/Cart';
 import Detail from './Views/Detail';
+import Confirm from './Views/Confirm';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,11 @@ export default function App() {
           name="Detail"
           component={Detail}
         />
+        <Stack.Screen
+        name="Confirm"
+        component={Confirm}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

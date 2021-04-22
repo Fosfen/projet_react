@@ -1,10 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList, ScrollView} from "react-native";
+import { View, Text, StyleSheet, FlatList, ScrollView, Button} from "react-native";
 
 const Cart = ({navigation, route}) => {
 
   return (
     <View style={styles.main_container}>
+      <Button title="Commander" color="#00aa00"
+      onPress = {() =>
+        navigation.navigate('Confirm')
+      }
+      />
         <View style={styles.title_container}>
             <Text style={styles.title}>Ma commande : {route.params.cart.map(a=>a.price).reduce((a,b)=>a+b,0)}€</Text>
         </View>
