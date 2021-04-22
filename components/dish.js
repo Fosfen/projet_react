@@ -2,13 +2,19 @@ import React from 'react';
 import { Text, View, Image, StyleSheet, Button, TouchableHighlight} from 'react-native';
 import Cart from '../Views/Cart';
 
-function removeItem(cart, id){
-  console.log(id)
+function removeItem(props, cart, id){
+
   var index = cart.map(x => {
     return x.id;
   }).indexOf(id);
 
   cart.splice(index, 1);
+  props.setRefresh(!props.refresh)
+}
+
+function addItem(props){
+  props.cart.push({id: props.id, name:props.name, price:props.price})
+  props.setRefresh(!props.refresh)
 }
 
 const Dish = (props) => {
@@ -23,7 +29,7 @@ const Dish = (props) => {
       </View>
      <View style={styles.parent_description_container}>
         <View style={styles.description_container}>
-          <Text style={styles.title}>{props.name} : {/*TODO quantité*/}</Text>
+          <Text style={styles.title}>{props.name} : {props.cart.filter(x => x.id == props.id).length}</Text>
           <Text style={styles.description}>{props.description}</Text>
         </View>
 
@@ -31,12 +37,12 @@ const Dish = (props) => {
           <Text style={styles.price}>{props.price}€</Text>
           
           <Button style={styles.button} color="#aa0000" title="-"
-            onPress={() => removeItem(props.cart, props.id)}>
+            onPress={() => removeItem(props, props.cart, props.id)}>
           </Button>
               
           <Button style={styles.button} color="#00aa00" title="+"
               onPress={() =>
-                        props.cart.push({id: props.id, name:props.name, price:props.price})
+                        addItem(props)
                       }>
           </Button>
 

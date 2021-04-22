@@ -17,7 +17,8 @@ const mocked_data = {
 
 const Home = ({ navigation}) => {
   const [data, setData] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([{ "id": "1", "name": "Saucisse", "price": 0.50},]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     setData(mocked_data.dishes);
@@ -38,9 +39,10 @@ const Home = ({ navigation}) => {
           <View>
             <FlatList
               data={data}
+              extraData={refresh}
               keyExtractor={({ id }, index) => id}
               renderItem={({ item }) => (
-                <Dish id={item.id} name={item.name} image={item.image} price={item.price} description={item.description} details={item.details} navigation={navigation} cart={cart}/>
+                <Dish id={item.id} name={item.name} image={item.image} price={item.price} description={item.description} details={item.details} navigation={navigation} cart={cart} refresh={refresh} setRefresh={setRefresh}/>
               )}
             />
           </View>
